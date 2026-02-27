@@ -104,7 +104,7 @@ Best Practice
 * Use let only if value needs to change
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
-2.DATA TYPES & TYPE SYSTEM 
+2. DATA TYPES & TYPE SYSTEM 
 * JavaScript is: Dynamically typed,Loosely typed
 * Meaning:You don’t declare type explicitly.A variable can change its type at runtime.
 Example:
@@ -228,7 +228,7 @@ Examples of truthy:
 * "hello"
 
 ------------------------------------------------------------------------------------------------------------------------------------------
-OPERATORS 
+3. OPERATORS 
 
 1. Arithmetic Operators - Used for mathematical calculations.
 * + => Addition and Concatenation 
