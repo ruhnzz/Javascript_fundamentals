@@ -35,10 +35,10 @@ obj.name = "Ram" // allowed
 obj = {} // error
 
 => Global Scope:
-*A variable declared outside any function or block has global scope.
+* A variable declared outside any function or block has global scope.
 Example:
 let a = 10;
-*It can be accessed anywhere in the program.
+* It can be accessed anywhere in the program.
 
 =>Function Scope
 *Variables declared with var inside a function are accessible anywhere inside that function.
@@ -68,7 +68,7 @@ let a = 10;
 *Important:var does not have TDZ because it is initialized with undefined during hoisting.
 
 => Hoisting 
-*Hoisting means JavaScript moves declarations to the top of their scope before execution.But behavior is different for var and let.
+* Hoisting means JavaScript moves declarations to the top of their scope before execution.But behavior is different for var and let.
 * Hoisting with var:
 console.log(a); // undefined
 var a = 10;
