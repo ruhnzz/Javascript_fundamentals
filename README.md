@@ -497,6 +497,42 @@ if (!userName) {
 name = "Guest";
 }
 
+example :
+
+In JavaScript, the || (OR) operator does not return a boolean.
+It returns one of the actual values.
+
+How || works:
+
+It returns:
+
+The first truthy value it finds
+
+If none are truthy, it returns the last value
+
+Example:
+
+let name = userName || "Guest";
+
+Case 1: userName = "Rohan"
+
+"userName" is truthy
+So expression becomes:
+
+"Rohan" || "Guest"
+
+Since first value is truthy, it returns "Rohan"
+
+name = "Rohan"
+
+Case 2: userName = ""
+
+Empty string is falsy.
+
+"" || "Guest"
+
+Since first value is falsy, it moves to second value.
+
 * 4. Conditional (Ternary) as Control Flow
 
 let result = age >= 18 ? "Adult" : "Minor";
