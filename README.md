@@ -230,16 +230,16 @@ Examples of truthy:
 ------------------------------------------------------------------------------------------------------------------------------------------
 3. OPERATORS 
 
-1. Arithmetic Operators - Used for mathematical calculations.
-* + => Addition and Concatenation 
-* - =>Subtraction
+ Arithmetic Operators - Used for mathematical calculations.
+* Addition and Concatenation +
+* Subtraction -
 * *=>Multiplication
 * / => Division
 * % Modulus (remainder)
 * ** Exponentiation (power)
   
 2. Comparison Operators - Used to compare two values. Returns true or false.
-* > Greater than
+* Greater than >
 * < Less than
 * = Greater than or equal
 * <= Less than or equal
