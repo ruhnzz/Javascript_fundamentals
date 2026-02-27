@@ -654,5 +654,210 @@ let data = isValid && fetchData();
 
 let result = age >= 18 ? "Adult" : "Minor";
 
+------------------------------------------------------------------------------------------------------------------------------------
+5: LOOPS 
+
+Loops are used to repeat code until a condition becomes false.
+
+* for loop
+
+Best when you know how many times to iterate.
+
+Syntax:
+
+for (initialization; condition; update) {
+// code
+}
+
+Example (1 to 5):
+
+for (let i = 1; i <= 5; i++) {
+console.log(i);
+}
+
+Flow:
+1 → check condition → run → increment → repeat
+
+* while loop
+
+Used when number of iterations is not known in advance.
+
+Syntax:
+
+initialization
+while (condition) {
+// code
+update
+}
+
+Example:
+
+let i = 1;
+while (i <= 5) {
+console.log(i);
+i++;
+}
+
+Important:
+If you forget update → infinite loop.
+
+* do...while loop
+
+Runs at least once (even if condition is false).
+
+Syntax:
+
+initialization
+do {
+// code
+update
+} while (condition);
+
+Example:
+
+let i = 1;
+do {
+console.log(i);
+i++;
+} while (i <= 5);
+
+* Difference:
+
+while → checks condition first
+do...while → runs first, checks later
+
+break and continue
+
+* break → completely exits the loop
+* continue → skips current iteration
+
+Example:
+
+for (let i = 1; i <= 5; i++) {
+if (i === 3) {
+continue;
+}
+console.log(i);
+}
+
+Output:
+1 2 4 5
+
+ for...in vs for...of (Very Important Interview Topic)
+
+
+let a = ['a','b','c'];
+
+Let’s understand the difference.
+
+* for...in
+
+Iterates over keys (indexes in array)
+
+Mostly used for objects
+
+Output:
+
+0
+1
+2
+
+Because it prints indexes.
+
+* for...of
+
+Iterates over values
+
+Used for arrays, strings, iterable objects
+
+Output:
+
+a
+b
+c
+
+Because it prints values.
+
+Better comparison:
+
+let a = ['a','b','c'];
+
+for (let index in a) {
+console.log(index, a[index]);
+}
+
+for (let value of a) {
+console.log(value);
+}
+
+Rule:
+
+Use for...of for arrays.
+Use for...in for objects.
+
+Example with Object:
+
+let obj = {name: "Rohan", age: 20};
+
+for (let key in obj) {
+console.log(key, obj[key]);
+}
+
+for...of will NOT work on plain objects.
+
+Traditional for loop with array
+
+You wrote:
+
+for(let i = 0; i < a.length; i++){
+console.log(i, a[i]);
+}
+
+This is:
+
+Most flexible
+
+Gives index access
+
+Can move forward/backward
+
+Can skip steps
+
+Important Interview Points You Should Add
+
+* Infinite loop example
+
+while(true){
+// runs forever
+}
+
+Looping over string
+
+for (let char of "hello") {
+console.log(char);
+}
+
+* Nested loops
+
+Used in patterns, matrix problems.
+
+Performance note
+
+for loop → generally fastest
+forEach → cleaner but slightly slower
+for...of → modern and clean
+
+Quick Interview Summary
+
+for → known iterations
+while → condition-based
+do...while → runs at least once
+break → exit loop
+continue → skip iteration
+for...in → keys/indexes
+for...of → values
+Use for...of for arrays
+Use for...in for objects
+
 
 
