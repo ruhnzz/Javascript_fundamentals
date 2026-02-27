@@ -342,3 +342,168 @@ Example:
 * Optional Chaining (ES2020) ?. - Prevents error if property doesn’t exist.
 let user = {};
 console.log(user.address?.city); // undefined (no error)
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+4. Control flow
+ 
+Control flow decides how your program executes based on conditions.
+
+1. if statement
+
+Executes block only if condition is true.
+
+Example:
+
+let a = 2;
+
+if (a % 2 === 0) {
+console.log("even");
+}
+
+Best practice:
+Use === instead of ==
+
+2. if–else
+
+Executes one block if true, another if false.
+
+let b = 3;
+
+if (b % 2 === 0) {
+console.log("even");
+} else {
+console.log("odd");
+}
+
+3. if–else if–else
+
+Used for multiple conditions.
+
+let c = 3;
+
+if (c % 2 === 0 && c % 3 === 0) {
+console.log("divisible by 6");
+}
+else if (c % 2 === 0) {
+console.log("divisible by 2");
+}
+else {
+console.log("divisible by 3");
+}
+
+Important:
+Conditions are checked top to bottom.
+As soon as one condition is true, remaining are skipped.
+
+4. switch statement
+
+Used when checking multiple fixed values.
+
+Your code:
+
+let val = 0;
+switch(val){
+case 0:
+console.log(0);
+case 1:
+console.log(1);
+case 2:
+console.log(2);
+default:
+console.log(3)
+break;
+}
+
+Important Concept: Fall-through
+
+Since you didn’t use break after each case, all cases after matching one will execute.
+
+For val = 0, output will be:
+
+0
+1
+2
+3
+
+Because it keeps executing until break.
+
+Correct version (if you don’t want fall-through):
+
+switch(val){
+case 0:
+console.log(0);
+break;
+case 1:
+console.log(1);
+break;
+case 2:
+console.log(2);
+break;
+default:
+console.log(3);
+}
+
+Interview Tip:
+switch uses strict comparison (===) internally.
+
+5. Early Return (Very Important Concept)
+
+Used to exit function early to avoid nested code.
+
+function add(){
+let v1 = 2;
+if (v1 === 3) {
+return true;
+}
+return false;
+}
+
+
+Early return is very important in:
+
+* API validations
+* Error handling
+* React components
+
+Important Extra Control Flow Concepts You Should Add
+
+1. Nested if
+
+if (a > 0) {
+if (a % 2 === 0) {
+console.log("positive even");
+}
+}
+
+But avoid deep nesting → use early return.
+
+2. Truthy/Falsy in if
+
+if ("hello") → runs
+if (0) → does not run
+
+Because JS converts condition to boolean.
+
+3. Short-circuit Control Flow
+
+Logical operators can replace if:
+
+let name = userName || "Guest";
+
+Instead of:
+
+if (!userName) {
+name = "Guest";
+}
+
+4. Conditional (Ternary) as Control Flow
+
+let result = age >= 18 ? "Adult" : "Minor";
+
+5. break and continue (used in loops, but part of control flow)
+
+break → exits loop or switch
+continue → skips current iteration
+
+
