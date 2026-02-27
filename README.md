@@ -349,7 +349,7 @@ console.log(user.address?.city); // undefined (no error)
  
 Control flow decides how your program executes based on conditions.
 
-1. if statement
+* 1. if statement
 
 Executes block only if condition is true.
 
@@ -364,7 +364,7 @@ console.log("even");
 Best practice:
 Use === instead of ==
 
-2. if–else
+* 2. if–else
 
 Executes one block if true, another if false.
 
@@ -376,7 +376,7 @@ console.log("even");
 console.log("odd");
 }
 
-3. if–else if–else
+* 3. if–else if–else
 
 Used for multiple conditions.
 
@@ -396,7 +396,7 @@ Important:
 Conditions are checked top to bottom.
 As soon as one condition is true, remaining are skipped.
 
-4. switch statement
+* 4. switch statement
 
 Used when checking multiple fixed values.
 
@@ -447,7 +447,7 @@ console.log(3);
 Interview Tip:
 switch uses strict comparison (===) internally.
 
-5. Early Return (Very Important Concept)
+* 5. Early Return (Very Important Concept)
 
 Used to exit function early to avoid nested code.
 
@@ -468,7 +468,7 @@ Early return is very important in:
 
 Important Extra Control Flow Concepts You Should Add
 
-1. Nested if
+* 1. Nested if
 
 if (a > 0) {
 if (a % 2 === 0) {
@@ -478,14 +478,14 @@ console.log("positive even");
 
 But avoid deep nesting → use early return.
 
-2. Truthy/Falsy in if
+* 2. Truthy/Falsy in if
 
 if ("hello") → runs
 if (0) → does not run
 
 Because JS converts condition to boolean.
 
-3. Short-circuit Control Flow
+* 3. Short-circuit Control Flow
 
 Logical operators can replace if:
 
@@ -497,13 +497,9 @@ if (!userName) {
 name = "Guest";
 }
 
-4. Conditional (Ternary) as Control Flow
+* 4. Conditional (Ternary) as Control Flow
 
 let result = age >= 18 ? "Adult" : "Minor";
 
-5. break and continue (used in loops, but part of control flow)
-
-break → exits loop or switch
-continue → skips current iteration
 
 
