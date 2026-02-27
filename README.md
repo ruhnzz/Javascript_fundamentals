@@ -216,6 +216,7 @@ Falsy values (only 7 falsy values exist in JavaScript):
 * undefined
 * NaN
 * Everything else is Truthy.
+  
 Examples of truthy:
 * "0"
 * "false"
