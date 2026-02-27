@@ -533,6 +533,13 @@ Empty string is falsy.
 
 Since first value is falsy, it moves to second value.
 
+* Important:
+
+|| does NOT return true or false unless operands are boolean.
+* Why this is useful?
+
+It is commonly used to give default values.
+
 * 4. Conditional (Ternary) as Control Flow
 
 let result = age >= 18 ? "Adult" : "Minor";
