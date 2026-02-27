@@ -114,6 +114,7 @@ a = "hello" // now string That is called Dynamic Typing.
 * Data Types in JavaScript There are 2 main categories:
 A) Primitive Types
 B) Reference (Non-Primitive) Types
+
 A) Primitive values are:
 * Stored directly in memory
 * Copied by value
@@ -186,7 +187,7 @@ typeof Quirks (Interview Favorite)
 * console.log(typeof function(){}); // "function"
 * Important: NaN stands for “Not a Number” But typeof NaN → "number"
 
-* Type Coercion (Automatic Type Conversion)
+Type Coercion (Automatic Type Conversion)
 JavaScript automatically converts types when needed.
 Example:
 * console.log("5" + 1);
@@ -200,6 +201,7 @@ More examples:
 * console.log(false + 1); // 1
 * console.log(null + 1); // 1
 * console.log(undefined + 1); // NaN
+  
 There are two types of coercion:
 * Implicit Coercion (automatic)
 * Explicit Coercion (manual) example: Number("5") , String(10), Boolean(0)
