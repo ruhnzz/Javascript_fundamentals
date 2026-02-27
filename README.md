@@ -38,7 +38,7 @@ obj = {} // error
 *A variable declared outside any function or block has global scope.
 Example:
 let a = 10;
-It can be accessed anywhere in the program.
+*It can be accessed anywhere in the program.
 
 =>Function Scope
 *Variables declared with var inside a function are accessible anywhere inside that function.
