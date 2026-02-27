@@ -41,17 +41,18 @@ let a = 10;
 * It can be accessed anywhere in the program.
 
 =>Function Scope
-*Variables declared with var inside a function are accessible anywhere inside that function.
+* Variables declared with var inside a function are accessible anywhere inside that function.
 Example:
 function test(){
 if(true){
 var a = 10;
 }
 console.log(a); // works
-} Because var is function scoped, not block scoped.
+}
+* Because var is function scoped, not block scoped.
 
 => Block Scope
-*Variables declared with let and const are accessible only inside the block { } where they are declared.
+* Variables declared with let and const are accessible only inside the block { } where they are declared.
 Example:
 if(true){
 let a = 10;
@@ -64,8 +65,8 @@ During this period, accessing the variable gives a ReferenceError.
 Example:
 console.log(a); // ReferenceError
 let a = 10;
-*Here:let a is hoisted.But it is not initialized.So accessing it before declaration causes error.
-*Important:var does not have TDZ because it is initialized with undefined during hoisting.
+* Here:let a is hoisted.But it is not initialized.So accessing it before declaration causes error.
+* Important:var does not have TDZ because it is initialized with undefined during hoisting.
 
 => Hoisting 
 * Hoisting means JavaScript moves declarations to the top of their scope before execution.But behavior is different for var and let.
@@ -85,22 +86,22 @@ let a; // hoisted but not initialized
 console.log(a); // TDZ error
 a = 10;
 
-*Redeclaration difference
+* Redeclaration difference
 var a = 10;
 var a = 20; // allowed
 let a = 10;
 let a = 20; // error
 
-*Reassignment difference
+* Reassignment difference
 let a = 10;
 a = 20; // allowed
 const a = 10;
 a = 20; // error
 
 Best Practice
-*Avoid var in modern JS.
-*Use const by default.
-*Use let only if value needs to change
+* Avoid var in modern JS.
+* Use const by default.
+* Use let only if value needs to change
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 2.DATA TYPES & TYPE SYSTEM 
