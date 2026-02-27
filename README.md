@@ -859,5 +859,163 @@ for...of → values
 Use for...of for arrays
 Use for...in for objects
 
+------------------------------------------------------------------------------------------------------------------------
+6: FUNCTIONS
+* Function Declaration
+Your example is correct.
+
+function add(a,b){
+console.log(a+b)
+}
+add(2,3)
+
+This works because function declarations are hoisted.
+
+* Function Expression
+Correct.
+
+let add = function(a,b){
+console.log(a+b)
+}
+add(2,3)
+
+Here the function is stored inside a variable.
+
+* Arrow Function
+Correct.
+
+let add = (a,b)=>{console.log(a+b)}
+add(1,3)
+
+You can also write shorter:
+
+let add = (a,b) => console.log(a+b)
+
+* Printing Dynamic Value
+Correct.
+
+function greet(name){
+console.log("hello " + `${name}`);
+}
+
+But template literals already handle variables, so better:
+
+console.log(`hello ${name}`);
+
+* Parameters vs Arguments
+
+a, b → parameters
+2, 3 → arguments
+
+* Default Parameters
+
+function add(a=0,b=0){
+console.log(a+b)
+}
+add()
+
+* Rest and Spread
+
+function add(a,b,...val){
+console.log(val);
+let count = a+b ;
+for(let i of val){
+count+=i
+}
+console.log("Total: "+count);
+}
+add(1,2);
+
+Here ...val is rest parameter.
+And yes, ... in arrays is called spread.
+
+* First Class Function
+Functions can:
+
+1. Be stored in variables
+2. Be passed as arguments
+3. Be returned from another function
+
+
+* Higher Order Function (HOF)
+
+A function is HOF if:
+
+1. It takes another function as argument
+2. OR returns a function
+
+Both your examples satisfy that.
+
+* Pure vs Impure Function
+
+This is NOT impure:
+
+function add(b){
+let a = 10
+console.log(++a+b);
+console.log(a)
+}
+
+It is still pure because:
+
+* It does not modify any external variable.
+* It does not depend on external state.
+
+A real impure function example:
+
+let a = 10;
+function add(b){
+a++;
+return a + b;
+}
+
+Here it changes outer variable → impure.
+
+Pure function example:
+
+function add(a,b){
+return a+b;
+}
+
+No side effects. Same input → same output.
+
+* Closures
+
+function parent(){
+let a = "parent"
+return function(){
+console.log("I am child of function called "+a);
+}
+}
+parent()()
+
+Child function remembers variable a even after parent execution ends → closure.
+
+* Lexical Scoping
+
+Inner function can access variables of outer function because of lexical scope.
+
+* IIFE : Immediately Invoked Function Expression 
+
+(function(a,b){
+console.log(a,b)
+})(1,2)
+
+* Hoisting
+
+Function declarations are hoisted.
+Arrow functions and function expressions are NOT hoisted.
+
+So this will throw error:
+
+add(2,3)
+
+let add = (a,b)=>{
+console.log(a+b)
+}
+
+Because let variables are in Temporal Dead Zone.
+
+
 
 
