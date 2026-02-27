@@ -34,7 +34,7 @@ const obj = {name: "Rohan"}
 obj.name = "Ram" // allowed
 obj = {} // error
 
-=> Global Scope
+=> Global Scope:
 *A variable declared outside any function or block has global scope.
 Example:
 let a = 10;
