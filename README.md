@@ -226,3 +226,119 @@ Examples of truthy:
 * 1
 * -1
 * "hello"
+
+------------------------------------------------------------------------------------------------------------------------------------------
+OPERATORS 
+
+1. Arithmetic Operators - Used for mathematical calculations.
+* + => Addition and Concatenation 
+* - =>Subtraction
+* *=>Multiplication
+* / => Division
+* % Modulus (remainder)
+* ** Exponentiation (power)
+  
+2. Comparison Operators - Used to compare two values. Returns true or false.
+* > Greater than
+* < Less than
+* = Greater than or equal
+* <= Less than or equal
+* == Loose equality
+* === Strict equality
+* != Loose not equal
+* !== Strict not equal
+* == → compares value only (type coercion happens)
+* === → compares value + type (no coercion)
+Example:
+5 == "5" // true
+5 === "5" // false
+* Best Practice: Always use === instead of ==
+
+3. Logical Operators - Used for combining conditions.
+* && AND
+* || OR
+* ! NOT
+
+Short-circuit behavior:
+* true || something → stops at true
+* false && something → stops at false
+
+4. Assignment Operators
+* = Assign
+* += Add and assign
+* -= Subtract and assign
+* *= Multiply and assign
+* /= Divide and assign
+* %= Modulus and assign
+Example:
+let a = 10;
+a += 5; // insted of a = a+5
+
+5. Unary Operators - Operate on a single operand.
+* typeof → returns data type
+* ++ → increment
+* -- → decrement
+
+Pre vs Post Increment (Very Important)
+let a = 5;
+* ++a // Pre-increment → first increase, then use
+* a++ // Post-increment → first use, then increase
+Example:
+let a = 5;
+console.log(++a); // 6
+console.log(a++); // 6
+console.log(a); // 7
+
+6. Ternary Operator
+
+* Shortcut for if-else. => condition ? value_if_true : value_if_false
+Example:
+let age = 18;
+let result = age >= 18 ? "Adult" : "Minor";
+
+typeof vs instanceof (Important Interview Topic)
+
+* typeof- Used for primitive type checking, Returns a string
+Example:
+typeof 10 // "number"
+typeof "hello" // "string"
+typeof null // "object" (bug)
+typeof [] // "object"
+
+* instanceof- Used to check object type, Checks prototype chain
+
+Example:
+
+let arr = [];
+arr instanceof Array // true
+arr instanceof Object // true
+
+Difference:
+
+* typeof → works well for primitives
+* instanceof → works for objects, arrays, custom classes
+
+Example:
+function Person(){}
+let p = new Person();
+p instanceof Person // true
+
+* Strict Not Equal !==
+
+* Nullish Coalescing (ES2020) ?? - Used when you want default value only for null or undefined.
+let name = null;
+let result = name ?? "Guest"; // "Guest"
+
+Difference:
+
+* || → checks for falsy
+* ?? → checks only for null or undefined
+
+Example:
+
+0 || 10 // 10
+0 ?? 10 // 0
+
+* Optional Chaining (ES2020) ?. - Prevents error if property doesn’t exist.
+let user = {};
+console.log(user.address?.city); // undefined (no error)
