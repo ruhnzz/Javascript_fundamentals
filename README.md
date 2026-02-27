@@ -540,6 +540,116 @@ Since first value is falsy, it moves to second value.
 
 It is commonly used to give default values.
 
+* Just like ||, the && operator also does NOT return true/false always.
+It returns actual values.
+
+How && works:
+
+It returns:
+
+The first falsy value it finds
+
+If all values are truthy → it returns the last value
+
+Think of it like this:
+
+|| → returns first truthy
+&& → returns first falsy
+
+Now let’s see examples.
+
+Example 1:
+
+"Rohan" && "Ram"
+
+Step 1: "Rohan" is truthy → continue
+Step 2: "Ram" is also truthy → no falsy found
+
+Result → "Ram" (last value)
+
+So:
+
+let val = "Rohan" && "Ram";
+console.log(val); // "Ram"
+
+Example 2:
+
+0 && "Hello"
+
+Step 1: 0 is falsy
+Stop immediately.
+
+Result → 0
+
+Example 3:
+
+true && 100
+
+true is truthy → continue
+100 is truthy
+
+Result → 100
+
+Example 4:
+
+false && 100
+
+false is falsy
+Stop.
+
+Result → false
+
+Practical Use Case
+
+Conditional execution
+
+Instead of:
+
+if (isLoggedIn) {
+showDashboard();
+}
+
+We write:
+
+isLoggedIn && showDashboard();
+
+If isLoggedIn is true → function runs
+If false → it stops immediately
+
+With objects
+
+let user = { name: "Rohan" };
+
+let result = user && user.name;
+
+If user exists → result = "Rohan"
+If user is null → result = null (no error)
+
+Important Comparison
+
+|| → gives default value
+&& → allows execution only if left side is truthy
+
+Quick Comparison Table
+
+A || B
+→ If A is truthy → return A
+→ Else → return B
+
+A && B
+→ If A is falsy → return A
+→ Else → return B
+
+Simple Trick to Remember
+
+|| is like: "If not A, then B"
+&& is like: "Only if A, then B"
+
+Very important interview pattern:
+
+let name = userName || "Guest";
+let data = isValid && fetchData();
+
 * 4. Conditional (Ternary) as Control Flow
 
 let result = age >= 18 ? "Adult" : "Minor";
