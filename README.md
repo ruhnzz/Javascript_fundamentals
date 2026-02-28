@@ -3,6 +3,7 @@ JavaScript Quick Revision
 1.VARIABLES:
 Used to store data values in memory.
 JavaScript has 3 ways to declare variables:
+
 => var (ES5)
 * Function scoped
 * Gets attached to window object (if declared globally in browser)
