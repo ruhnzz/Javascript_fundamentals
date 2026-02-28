@@ -903,6 +903,11 @@ console.log(`hello ${name}`);
 
 * Parameters vs Arguments
 
+let add = function(a,b){
+console.log(a+b)
+}
+add(2,3)
+
 a, b → parameters
 2, 3 → arguments
 
