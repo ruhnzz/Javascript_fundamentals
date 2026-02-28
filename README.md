@@ -1043,9 +1043,9 @@ console.log(a+b)
 }
 
 Because let variables are in Temporal Dead Zone.
+
 -----------------------------------------------------------------------------------------------------------------------------
-7. ARRAYS (JavaScript)
-━━━━━━━━━━━━━━━━━━━
+7. ARRAYS 
 
 What is an Array?
 
@@ -1057,153 +1057,121 @@ let arr = [1, 2, 3, 4];
 
 Important Properties:
 
-Zero-based index
+* Zero-based index
 
-Dynamic size (can grow/shrink)
+* Dynamic size (can grow/shrink)
 
-Can store mixed data types
+* Can store mixed data types
 
 Arrays in JavaScript vs Other Languages
 
-In JavaScript:
+* In JavaScript:Arrays can store different data types.
 
-Arrays can store different data types.
-
-They are dynamic.
-
-Internally they are objects.
+* They are dynamic.Internally they are objects.
 
 Example:
 
 let arr = [1, null, "abc", undefined, [10,20], {id:1,name:"Rohan"}];
 
-In languages like C, C++, Java:
-
-Arrays are fixed size.
-
-Must store same data type only.
+In languages like C, C++, Java:Arrays are fixed size.Must store same data type only.
 
 Creation
 
 let arr = [1,2,3];
 let arr2 = new Array(1,2,3); // less common
 
-Access & Modify
+ Access & Modify
 
-Access:
-arr[0]
+* Access:arr[0]
 
-Modify:
-arr[0] = 100
+* Modify:arr[0] = 100
 
 Important Basic Methods (Mutating Methods)
 
 These change the original array.
 
-push()
-Adds element at end.
+* push(): Adds element at end.
 
-pop()
-Removes element from end.
+* pop(): Removes element from end.
 
-shift()
-Removes element from beginning.
+* shift(): Removes element from beginning.
 
-unshift()
-Adds element at beginning.
-
-Example:
-
-let arr = [1,2,3];
-arr.push(4); // [1,2,3,4]
-arr.pop(); // [1,2,3]
-
-splice()
-
-Most powerful array method.
-It modifies original array.
+* unshift(): Adds element at beginning.
+* splice(): Most powerful array method.It modifies original array.
 
 Syntax:
 arr.splice(startIndex, deleteCount, item1, item2, ...)
 
-Uses:
+splice Uses: arr = [1,2,3,4,5]
 
-Remove elements:
-arr.splice(2,2)
+* Remove elements: arr.splice(2,2) //[1,2,5]
 
-Add elements:
-arr.splice(2,0,6,7)
+* Add elements: arr.splice(2,0,6,7) //[1,2,6,7,5]
 
-Replace element:
-arr.splice(2,1,3)
+* Replace element: arr.splice(2,1,3) // [1,2,3,7,5]
 
-Important:
-splice modifies original array.
+* Important:splice modifies original array.
 
-slice()
-
-Used to extract part of array.
+* slice(): Used to extract part of array.
 
 Syntax:
 arr.slice(start, end)
 
-End index is exclusive.
+* End index is exclusive.
 
-Does NOT modify original array.
+* Does NOT modify original array.
 
-Returns new array.
+* Returns new array.
 
 Example:
 let newArr = arr.slice(1,4);
 
 Difference:
 
-splice → modifies original
-slice → does not modify original
+* splice → modifies original
+* slice → does not modify original
 
 reverse()
 
-Reverses array in place.
-Modifies original array.
+* Reverses array in place.
+* Modifies original array.
 
 arr.reverse();
 
 sort()
 
-Sorts array alphabetically by default.
+* Sorts array alphabetically by default.
+* arr.sort() works fine for string and characters
 
 Example:
 
 let arr = [100,2,30];
-arr.sort();
+arr.sort(); // fails for numbers
 
 Output:
 [100,2,30] → wrong numeric order
 
-Because sort converts to string and compares.
+* Because sort converts to string and compares.
 
-For numbers, always use compare function:
+* For numbers, always use compare function:
 
-Ascending:
-arr.sort((a,b) => a - b);
+* Ascending: arr.sort((a,b) => a - b);
 
-Descending:
-arr.sort((a,b) => b - a);
+* Descending: arr.sort((a,b) => b - a);
 
-Important:
-sort() modifies original array.
+* Important: sort() modifies original array.
 
 Iteration Methods (Very Important)
 
-These use callback functions.
+* These use callback functions.
 
 A) forEach()
 
-Used to loop through array.
+* Used to loop through array.
 
-Does not return new array.
+* Does not return new array.
 
-Cannot break early.
+* Cannot break early.
 
 arr.forEach((val) => {
 console.log(val);
@@ -1211,130 +1179,123 @@ console.log(val);
 
 B) map()
 
-Returns a new array.
+* Returns a new array.
 
-Used to transform data.
+* Used to transform data.
 
-Same length as original.
+* Same length as original.
 
 let newArr = arr.map(val => val * 10);
 
-Important:
-If you don’t return inside map → it gives undefined.
+// let newarr=arr.map((val)=>{return val*10})//[10, 20, 30, 40, 50]
+
+// let newarr = arr.map((val)=>{if(val>3){return val*10}})//(5) [undefined, undefined, undefined, 40, 50]
+
+// let newarr = arr.map((val)=>{if(val>3){return val*10} else{return "not found" }}) //['not found', 'not found', 'not found', 40, 50]
+
+* Important: If you don’t return inside map → it gives undefined.
 
 C) filter()
 
-Returns new array.
+* Returns new array.
 
-Filters based on condition.
+* Filters based on condition.
 
-May return fewer elements.
+* May return fewer elements.
 
-let filtered = arr.filter(val => val > 3);
+let filtered = arr.filter(val => val > 3); //4,5
 
 D) reduce()
 
-Most powerful method.
-Reduces array to single value.
+* Most powerful method.
+* Reduces array to single value.
 
-Syntax:
-arr.reduce((accumulator, currentValue) => {}, initialValue)
+* Syntax: arr.reduce((accumulator, currentValue) => {}, initialValue)
 
 Example:
 
 let total = arr.reduce((acc,val) => acc + val, 0);
 
-Used for:
-
-Sum
-
-Product
-
-Counting
-
-Grouping
+* Used for:Sum, Product, Counting, Grouping
 
 E) find()
 
-Returns first matching element.
+* Returns first matching element.
 
-Returns undefined if not found.
+* Returns undefined if not found.
 
 let f = arr.find(val => val === 2);
+let obj= [{id:1,key:1,name:"abc"},{id:2,key:2,name:"def"},{id:3,key:1,name:"ghi"}]
+let f = obj.find((val)=>{if(val.key===1){return val}})//{id: 1, key: 1, name: 'abc'} 
+let f = obj.find((val)=>{if(val.key===10){return val}}) //undefined 
+
 
 F) some()
 
-Returns true if at least one element satisfies condition.
+* Returns true if at least one element satisfies condition.
 
-marks.some(val => val > 90);
+  let marks = [10,20, 40,95]
+
+marks.some(val => val > 90); //true
 
 G) every()
 
-Returns true only if all elements satisfy condition.
+* Returns true only if all elements satisfy condition.
 
-marks.every(val => val > 0);
+ let ans = marks.every((val)=>val>0)//true
+ 
+let ans = marks.every((val)=>val>50) //false
 
 Mutating vs Non-Mutating Methods (Interview Question)
 
-Mutating (change original):
-push, pop, shift, unshift, splice, sort, reverse
+* Mutating (change original):push, pop, shift, unshift, splice, sort, reverse
 
-Non-mutating:
-slice, map, filter, reduce, find, some, every
+* Non-mutating:slice, map, filter, reduce, find, some, every
 
 Important Interview Differences
 
 map vs forEach
 
-map:
+* map:Returns new array, Used for transformation
 
-Returns new array
-
-Used for transformation
-
-forEach:
-
-Returns undefined
-
-Used for side effects
+* forEach:Returns undefined, Used for side effects
 
 find vs filter
 
-find:
+* find:Returns first match, Returns single element
 
-Returns first match
-
-Returns single element
-
-filter:
-
-Returns all matches
-
-Returns array
+* filter:Returns all matches, Returns array
 
 some vs every
 
-some:
+* some:Checks if at least one passes
 
-Checks if at least one passes
-
-every:
-
-Checks if all pass
+* every:Checks if all pass
 
 Important Extra Concepts You Should Add
 
-Array length property
-arr.length
+* Array length property - arr.length
 
-Spread operator
+Spread operator: The spread operator expands (spreads out) elements of an iterable like an array or object into individual elements.
+if we don't use spread and simple copy 
+let a = [1,2,3]
+b = a
+the chnages made in b will reflect in a to avoid this we use spread which will copy real values not reference
 let copy = [...arr];
 
-Array destructuring
+Array destructuring: Array destructuring allows you to extract values from an array and assign them to variables in a single statement.
 let [a,b] = arr;
+let arr = [1, 2, 3, 4];
+let [x, , y] = arr;
+console.log(x); // 1
+console.log(y); // 3
 
-includes()
-arr.includes(5);
+includes(): includes() is an array method that checks whether a specific value exists in the array.
+It returns true or false.
+let arr = [1, 2, 3, 4];
+
+console.log(arr.includes(3)); // true
+console.log(arr.includes(5)); // false
 
 Quick Interview Summary
 
