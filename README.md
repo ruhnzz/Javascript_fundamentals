@@ -863,7 +863,7 @@ Use for...in for objects
 ------------------------------------------------------------------------------------------------------------------------
 6: FUNCTIONS
 * Function Declaration
-Your example is correct.
+
 
 function add(a,b){
 console.log(a+b)
@@ -873,7 +873,7 @@ add(2,3)
 This works because function declarations are hoisted.
 
 * Function Expression
-Correct.
+
 
 let add = function(a,b){
 console.log(a+b)
@@ -883,7 +883,7 @@ add(2,3)
 Here the function is stored inside a variable.
 
 * Arrow Function
-Correct.
+
 
 let add = (a,b)=>{console.log(a+b)}
 add(1,3)
@@ -893,15 +893,13 @@ You can also write shorter:
 let add = (a,b) => console.log(a+b)
 
 * Printing Dynamic Value
-Correct.
+
 
 function greet(name){
-console.log("hello " + `${name}`);
+console.log(`hello ${name}`);
 }
 
-But template literals already handle variables, so better:
 
-console.log(`hello ${name}`);
 
 * Parameters vs Arguments
 
