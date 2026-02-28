@@ -1043,6 +1043,312 @@ console.log(a+b)
 }
 
 Because let variables are in Temporal Dead Zone.
+-----------------------------------------------------------------------------------------------------------------------------
+7. ARRAYS (JavaScript)
+━━━━━━━━━━━━━━━━━━━
+
+What is an Array?
+
+An array is an ordered collection of values stored in a single variable.
+
+Example:
+
+let arr = [1, 2, 3, 4];
+
+Important Properties:
+
+Zero-based index
+
+Dynamic size (can grow/shrink)
+
+Can store mixed data types
+
+Arrays in JavaScript vs Other Languages
+
+In JavaScript:
+
+Arrays can store different data types.
+
+They are dynamic.
+
+Internally they are objects.
+
+Example:
+
+let arr = [1, null, "abc", undefined, [10,20], {id:1,name:"Rohan"}];
+
+In languages like C, C++, Java:
+
+Arrays are fixed size.
+
+Must store same data type only.
+
+Creation
+
+let arr = [1,2,3];
+let arr2 = new Array(1,2,3); // less common
+
+Access & Modify
+
+Access:
+arr[0]
+
+Modify:
+arr[0] = 100
+
+Important Basic Methods (Mutating Methods)
+
+These change the original array.
+
+push()
+Adds element at end.
+
+pop()
+Removes element from end.
+
+shift()
+Removes element from beginning.
+
+unshift()
+Adds element at beginning.
+
+Example:
+
+let arr = [1,2,3];
+arr.push(4); // [1,2,3,4]
+arr.pop(); // [1,2,3]
+
+splice()
+
+Most powerful array method.
+It modifies original array.
+
+Syntax:
+arr.splice(startIndex, deleteCount, item1, item2, ...)
+
+Uses:
+
+Remove elements:
+arr.splice(2,2)
+
+Add elements:
+arr.splice(2,0,6,7)
+
+Replace element:
+arr.splice(2,1,3)
+
+Important:
+splice modifies original array.
+
+slice()
+
+Used to extract part of array.
+
+Syntax:
+arr.slice(start, end)
+
+End index is exclusive.
+
+Does NOT modify original array.
+
+Returns new array.
+
+Example:
+let newArr = arr.slice(1,4);
+
+Difference:
+
+splice → modifies original
+slice → does not modify original
+
+reverse()
+
+Reverses array in place.
+Modifies original array.
+
+arr.reverse();
+
+sort()
+
+Sorts array alphabetically by default.
+
+Example:
+
+let arr = [100,2,30];
+arr.sort();
+
+Output:
+[100,2,30] → wrong numeric order
+
+Because sort converts to string and compares.
+
+For numbers, always use compare function:
+
+Ascending:
+arr.sort((a,b) => a - b);
+
+Descending:
+arr.sort((a,b) => b - a);
+
+Important:
+sort() modifies original array.
+
+Iteration Methods (Very Important)
+
+These use callback functions.
+
+A) forEach()
+
+Used to loop through array.
+
+Does not return new array.
+
+Cannot break early.
+
+arr.forEach((val) => {
+console.log(val);
+});
+
+B) map()
+
+Returns a new array.
+
+Used to transform data.
+
+Same length as original.
+
+let newArr = arr.map(val => val * 10);
+
+Important:
+If you don’t return inside map → it gives undefined.
+
+C) filter()
+
+Returns new array.
+
+Filters based on condition.
+
+May return fewer elements.
+
+let filtered = arr.filter(val => val > 3);
+
+D) reduce()
+
+Most powerful method.
+Reduces array to single value.
+
+Syntax:
+arr.reduce((accumulator, currentValue) => {}, initialValue)
+
+Example:
+
+let total = arr.reduce((acc,val) => acc + val, 0);
+
+Used for:
+
+Sum
+
+Product
+
+Counting
+
+Grouping
+
+E) find()
+
+Returns first matching element.
+
+Returns undefined if not found.
+
+let f = arr.find(val => val === 2);
+
+F) some()
+
+Returns true if at least one element satisfies condition.
+
+marks.some(val => val > 90);
+
+G) every()
+
+Returns true only if all elements satisfy condition.
+
+marks.every(val => val > 0);
+
+Mutating vs Non-Mutating Methods (Interview Question)
+
+Mutating (change original):
+push, pop, shift, unshift, splice, sort, reverse
+
+Non-mutating:
+slice, map, filter, reduce, find, some, every
+
+Important Interview Differences
+
+map vs forEach
+
+map:
+
+Returns new array
+
+Used for transformation
+
+forEach:
+
+Returns undefined
+
+Used for side effects
+
+find vs filter
+
+find:
+
+Returns first match
+
+Returns single element
+
+filter:
+
+Returns all matches
+
+Returns array
+
+some vs every
+
+some:
+
+Checks if at least one passes
+
+every:
+
+Checks if all pass
+
+Important Extra Concepts You Should Add
+
+Array length property
+arr.length
+
+Spread operator
+let copy = [...arr];
+
+Array destructuring
+let [a,b] = arr;
+
+includes()
+arr.includes(5);
+
+Quick Interview Summary
+
+Array → ordered collection
+Zero-based indexing
+Dynamic and can store mixed types
+splice modifies, slice doesn’t
+sort needs compare function for numbers
+map → transform
+filter → condition
+reduce → single value
+find → first match
+some → any true
+every → all true
 
 
 
