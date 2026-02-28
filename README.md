@@ -940,6 +940,14 @@ Functions can:
 2. Be passed as arguments
 3. Be returned from another function
 
+//  1.let fnc = function add(a,b){console.log(a+b)}
+
+// 2.function represent(add){
+//     add(2,2)
+// }
+// represent(function add(a,b){console.log(a+b)})
+
+
 
 * Higher Order Function (HOF)
 
@@ -948,7 +956,23 @@ A function is HOF if:
 1. It takes another function as argument
 2. OR returns a function
 
-Both your examples satisfy that.
+   // 1st way of HOF
+//  let fnc = function add(a,b){console.log(a+b)}
+
+// function represent(fnc){ 
+//     fnc(2,2) // it is HOF because takes func as a parameter
+// }
+// represent(fnc)
+
+// // 2 way of HOF 
+// function hof(){ // it is HOF because it returns func
+//     return function(a,b){
+//         console.log("a="+a," b="+b);
+//     }
+// }
+// hof()(10,100)
+
+
 
 * Pure vs Impure Function
 
