@@ -1310,7 +1310,285 @@ reduce → single value
 find → first match
 some → any true
 every → all true
+-----------------------------------------------------------------------------------------------------------------------
 
+8. OBJECTS 
+
+
+What is an Object?
+
+An object is a collection of key–value pairs.
+
+Keys are also called properties.
+
+Values can be any data type (primitive, array, function, object).
+
+Example:
+
+let obj = {}; // empty object
+
+let obj = {
+name: "Harsh",
+age: 12
+};
+
+Important:
+Objects are reference types.
+
+Accessing Object Properties
+
+There are two ways:
+
+A) Dot Notation
+
+obj.name
+
+B) Bracket Notation
+
+obj["name"]
+
+Both give the same result.
+
+Dot vs Bracket Notation (Very Important)
+
+Example:
+
+let obj = { name: "Harsh" };
+let aa = "name";
+
+obj.aa // undefined
+obj[aa] // "Harsh"
+
+Explanation:
+
+Dot notation:
+obj.aa
+→ Looks for property literally called "aa".
+
+Bracket notation:
+obj[aa]
+→ Converts aa to its value ("name")
+→ Becomes obj["name"]
+
+Rule:
+
+Use dot when property name is fixed.
+Use bracket when property name is dynamic or contains special characters.
+
+Keys with Special Characters
+
+If key contains hyphen or space, dot notation won’t work.
+
+Example:
+
+let object = { "first-name": "abc" };
+
+Access:
+object["first-name"]
+
+Destructuring:
+
+let { "first-name": first } = object;
+
+Nested Objects & Deep Access
+
+Objects can contain other objects.
+
+Example:
+
+let user = {
+name: "Harsh",
+age: 24,
+address: {
+city: "Delhi",
+location: {
+lat: 24,
+lng: 23
+}
+}
+};
+
+Access deep value:
+
+user.address.location.lat
+
+Object Destructuring (Very Important)
+
+Extract properties into variables.
+
+Example:
+
+let { lat, lng } = user.address.location;
+
+Rename during destructuring:
+
+let { lat: latitude, lng } = user.address.location;
+
+Important:
+Property name must match exactly.
+
+Wrong:
+
+let { lat, long } = user.address.location;
+→ long will be undefined (because property is lng)
+
+Looping Through Objects
+
+A) for...in
+
+let obj = { name: "Harsh", age: 12 };
+
+for (let key in obj) {
+console.log(key, obj[key]);
+}
+
+Used to iterate over keys.
+
+B) Object.keys()
+
+Object.keys(obj)
+→ ["name", "age"]
+
+Returns array of keys.
+
+C) Object.values()
+
+Object.values(obj)
+→ ["Harsh", 12]
+
+D) Object.entries() (Very Useful)
+
+Object.entries(obj)
+→ [["name","Harsh"], ["age",12]]
+
+Example:
+
+Object.entries(obj).forEach(([key, value]) => {
+console.log(key, value);
+});
+
+Copying Objects (Very Important Interview Topic)
+
+Objects are copied by reference.
+
+Example:
+
+let obj1 = { name: "Harsh" };
+let obj2 = obj1;
+
+obj2.name = "Rohan";
+
+obj1.name → "Rohan" (both changed)
+
+A) Shallow Copy
+
+Spread Operator
+
+let obj2 = { ...obj, profession: "teacher" };
+
+Object.assign()
+
+let obj2 = Object.assign({ profession: "teacher" }, obj);
+
+Important:
+Shallow copy copies only first level.
+
+B) Deep Clone
+
+When object has nested objects.
+
+Example:
+
+let obj = {
+name: "Harsh",
+Address: { city: "hyd" }
+};
+
+Using JSON method:
+
+let obj2 = JSON.parse(JSON.stringify(obj));
+
+obj2.Address.city = "goa";
+
+Now original object will not change.
+
+Note:
+JSON method does not work with functions, undefined, or Date objects.
+
+Optional Chaining (ES2020)
+
+Prevents error when accessing deeply nested properties.
+
+Example:
+
+let obj = {
+name: "Harsh",
+Address: { city: "hyd" }
+};
+
+obj?.Address?.city // "hyd"
+obj?.Adrs?.city // undefined (no error)
+
+Without optional chaining → would throw error.
+
+Computed Property Names
+
+Dynamic keys using [].
+
+Example:
+
+let role = "teacher";
+
+let users = {
+name: "abc",
+age: 21,
+[role]: "xyz"
+};
+
+Result:
+{ name: "abc", age: 21, teacher: "xyz" }
+
+Object Keys Can Be:
+
+String (most common)
+
+Number
+
+Boolean
+
+Example:
+
+let obj3 = { true: "yes", 32: "age" };
+
+Important:
+Internally all keys are converted to strings.
+
+Important Interview Concepts
+
+Objects are reference types.
+
+Copied by reference unless cloned.
+
+Dot vs bracket difference.
+
+Shallow vs deep copy.
+
+Object.keys, values, entries.
+
+Optional chaining prevents runtime errors.
+
+Destructuring makes code cleaner.
+
+Quick Interview Summary
+
+Object → collection of key-value pairs
+Access → dot or bracket
+Dynamic key → bracket
+Nested access → object.object.property
+Shallow copy → spread / Object.assign
+Deep copy → JSON method
+Optional chaining → ?.
+Destructuring → extract properties
 
 
 
