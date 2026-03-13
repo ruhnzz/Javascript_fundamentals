@@ -1312,7 +1312,7 @@ some → any true
 every → all true
 -----------------------------------------------------------------------------------------------------------------------
 
-8. OBJECTS 
+# 8. OBJECTS 
 
 
 What is an Object?
@@ -1335,7 +1335,7 @@ age: 12
 Important:
 Objects are reference types.
 
-Accessing Object Properties
+Accessing and adding key value pair to existing object Object Properties
 
 There are two ways:
 
